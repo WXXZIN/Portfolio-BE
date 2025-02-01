@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "spring.jwt.secret",
+      "type": "java.lang.String",
+      "description": "Description for spring.jwt.secret."
+    },
+    {
+      "name": "google.revoke.uri",
+      "type": "java.lang.String",
+      "description": "Description for google.revoke.uri."
+    },
+    {
+      "name": "kakao.revoke.uri",
+      "type": "java.lang.String",
+      "description": "Description for kakao.revoke.uri."
+    },
+    {
+      "name": "naver.revoke.uri",
+      "type": "java.lang.String",
+      "description": "Description for naver.revoke.uri."
+    }
+  ]
+}

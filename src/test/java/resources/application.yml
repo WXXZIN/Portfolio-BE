@@ -1,0 +1,76 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        show_sql: true
+
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASSWORD}
+      device-index: ${REDIS_DEVICE_INDEX}
+      jwt-index: ${REDIS_JWT_INDEX}
+      mail-index: ${REDIS_MAIL_INDEX}
+
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        debug: true
+        smtp:
+          connectiontimeout: 5000
+          starttls:
+            enable: true
+            auth: true
+            required: true
+
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration:
+      access: 15 # 15 minutes
+      refresh: 7 # 7 days
+
+## Swagger
+springdoc:
+  swagger-ui:
+    groups-order: desc
+    tags-sorter: alpha
+    operations-sorter: method
+
+  paths-to-match:
+    - /api/**
+
+## Logging
+logging:
+  level:
+    root: info
+    org.springframework.security: debug
+
+  file:
+    name: ./logs/spring-boot-logging.log
