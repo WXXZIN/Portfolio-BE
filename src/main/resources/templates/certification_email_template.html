@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+    <head>
+        <title>이메일 인증 안내</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div style="font-family: 'Apple SD Gothic Neo', 'sans-serif' !important; width: 540px; height: 600px; border-top: 4px solid #02b875; margin: 100px auto; padding: 30px 0; box-sizing: border-box;">
+            <h1 style="margin: 0; padding: 0 5px; font-size: 28px; font-weight: 400;">
+                <span style="color: #02b875;">이메일 인증 안내</span>
+            </h1>
+            <p style="font-size: 16px; line-height: 26px; margin-top: 50px; padding: 0 5px;">
+                안녕하세요. 고객님<br />
+                <b style="color: #02b875;">'회원가입'</b> 을 위해 이메일 인증을 진행합니다.<br />
+                아래 발급된 이메일 인증 번호를 복사하거나 직접 입력하여 인증을 완료해 주세요.<br />
+                개인정보 보호를 위해 인증번호는 3분 간 유효합니다.
+            </p>
+
+            <p style="text-align: center; height: 50px; background: #f6f6f6; line-height: 55px; font-size: 24px; letter-spacing: 5px"><strong>[[${certificationNumber}]]</strong></strong></p>
+        </div>
+    </body>
+</html>
